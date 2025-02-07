@@ -21,6 +21,7 @@ import {
   AlertDialogFooter,
   AlertDialogCancel,
 } from "@/components/ui/alert-dialog";
+import Image from "next/image";
 
 const fadeIn = {
   initial: { opacity: 0, y: 20 },
@@ -460,15 +461,18 @@ export default function BillSplitter() {
               Image Successfully Extracted
             </AlertDialogTitle>
             <AlertDialogDescription className="text-center">
-              Please adjust the item or fee if it's not match
+              Please adjust the item or fee if it&apos;s not match
             </AlertDialogDescription>
           </AlertDialogHeader>
           {imagePreview && (
             <div className="mt-4 rounded-lg overflow-hidden">
-              <img
+              <Image
                 src={imagePreview}
                 alt="Bill preview"
+                width={800}
+                height={600}
                 className="w-full h-auto max-h-[60vh] md:max-h-[40vh] object-contain"
+                unoptimized
               />
             </div>
           )}
